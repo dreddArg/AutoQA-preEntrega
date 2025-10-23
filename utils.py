@@ -1,7 +1,7 @@
-#from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 def login(driver):
 
@@ -15,3 +15,6 @@ def login(driver):
     username_textbox.send_keys("standard_user")
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
+
+    # Pausa
+    time.sleep(2)
