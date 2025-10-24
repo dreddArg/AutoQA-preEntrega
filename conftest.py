@@ -1,11 +1,18 @@
 import pytest
+import tempfile
 from selenium import webdriver
 from utils import login
 
 @pytest.fixture
 def driver():
-    # Definimos navegador
-    driver = webdriver.Chrome()
+    # Creamos opciones para el Chrome
+    options = webdriver.ChromeOptions()
+
+    # Sesion en modo incognito, impide pop-up de contraseña insegura
+    options.add_argument("--incognito")
+
+    # Definimos navegador con opciones cargadas
+    driver = webdriver.Chrome(options=options)
 
     # Establecemos espera implicita gral
     driver.implicitly_wait(5)
