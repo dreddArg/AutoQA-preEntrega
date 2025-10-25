@@ -3,7 +3,8 @@ import pytest
 # Pruebas a ejecutar
 test_files = [
     "tests/test_login.py",
-    "tests/test_inventory.py"
+    "tests/test_inventory.py",
+    "tests/test_cart.py"
 ]
 
 # Seteo de argumentos para reports
